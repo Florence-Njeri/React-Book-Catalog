@@ -1,0 +1,62 @@
+env:
+  RUBY_VERSION: 3.0
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_DB: tip_calculator_test
+  CODECOV_TOKEN: 981832f3-7e43-40fc-b822-6b7b5056398e
+
+name: Run Rspec Unit Tests
+
+on: [push]
+
+jobs:
+  build:
+    name: Run Rspec Tests on Github Actions
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: ${{env.POSTGRES_USER}}
+          POSTGRES_PASSWORD: ${{env.POSTGRES_PASSWORD}}
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: 'main'
+      - uses: actions/setup-ruby@v1
+      
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+
+      - name: Install PostgreSQL
+        run: sudo apt-get -yqq install libpq-dev
+      
+      - name: Run bundle install
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+      - name: Setup Database
+        env:
+          RAILS_ENV: test
+          PGHOST: localhost
+          PGUSER: postgres
+        run: |
+          bundler exec rails db:create RAILS_ENV=test
+          bundler exec rails db:migrate RAILS_ENV=test
+
+      - name: Build and test with rspec
+        env:
+          RAILS_ENV: test
+          PGHOST: localhost
+          PGUSER: postgres
+        run: bundle exec rspec
+
+      - name: Upload coverage results to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: 981832f3-7e43-40fc-b822-6b7b5056398e
+          file: coverage/coverage.xml

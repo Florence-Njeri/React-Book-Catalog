@@ -1,0 +1,127 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/florencenjeri/projects/book-catalog/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/helpers/books_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/models/book.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/controllers/books_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/florencenjeri/projects/book-catalog/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1650514545
+  }
+}
