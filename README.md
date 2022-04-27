@@ -1,26 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build a catalog of books you've read
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version - 3.03
 
 * System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+- *[RSpec](https://github.com/rspec/rspec-rails)* - Unit Tests
+- *[Simplecov](https://github.com/simplecov-ruby/simplecov)* - To generate code coverage 
+- *[Github Actions](https://github.com/features/actions)* - to automate workflows
 
 * How to run the test suite
+  `bundle exec rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Catalogue of books read
-# React-Book-Catalog
+* How to generate code coverage report
+  `COEVARAGE= on rspec`
